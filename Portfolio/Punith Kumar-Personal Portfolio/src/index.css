@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Deep Space Theme with Neon Accents
+All colors MUST be HSL for perfect theming.
+*/
+
+@keyframes sunshine {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes moonrise {
+  0% {
+    transform: scale(0.8) rotate(-30deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.animate-sunshine {
+  animation: sunshine 2s infinite;
+}
+
+.animate-moonrise {
+  animation: moonrise 0.5s ease-out;
+}
+
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@layer base {
+  :root {
+    /* Deep space backgrounds */
+    --background: 222 47% 4%;
+    --background-secondary: 225 39% 7%;
+    --background-tertiary: 228 35% 10%;
+    --foreground: 220 15% 95%;
+
+    /* Glassmorphism cards */
+    --card: 225 39% 7%;
+    --card-secondary: 228 35% 10%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 225 39% 7%;
+    --popover-foreground: 220 15% 95%;
+
+    /* Neon primary - Cyan blue */
+    --primary: 195 100% 60%;
+    --primary-glow: 195 100% 70%;
+    --primary-dark: 195 100% 45%;
+    --primary-foreground: 222 47% 4%;
+
+    /* Neon secondary - Electric green */
+    --secondary: 142 76% 50%;
+    --secondary-glow: 142 76% 60%;
+    --secondary-foreground: 222 47% 4%;
+
+    /* Subtle variations */
+    --muted: 228 20% 25%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Accent - Purple neon */
+    --accent: 270 95% 65%;
+    --accent-glow: 270 95% 75%;
+    --accent-foreground: 222 47% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 95%;
+
+    --border: 228 20% 20%;
+    --input: 228 20% 15%;
+    --ring: 195 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-glow)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 50%, hsl(var(--background-tertiary)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 20px hsl(var(--secondary) / 0.3);
+    --glow-accent: 0 0 20px hsl(var(--accent) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Enhanced dark mode with even deeper space theme */
+    --background: 217 33% 2%;
+    --background-secondary: 220 32% 3%;
+    --background-tertiary: 225 31% 5%;
+    --foreground: 220 15% 97%;
+
+    --card: 220 32% 3%;
+    --card-secondary: 225 31% 5%;
+    --card-foreground: 220 15% 97%;
+
+    --popover: 220 32% 3%;
+    --popover-foreground: 220 15% 97%;
+
+    /* Brighter neons in dark mode */
+    --primary: 195 100% 65%;
+    --primary-glow: 195 100% 75%;
+    --primary-dark: 195 100% 50%;
+    --primary-foreground: 217 33% 2%;
+
+    --secondary: 142 76% 55%;
+    --secondary-glow: 142 76% 65%;
+    --secondary-foreground: 217 33% 2%;
+
+    --muted: 225 20% 18%;
+    --muted-foreground: 220 15% 75%;
+
+    --accent: 270 95% 70%;
+    --accent-glow: 270 95% 80%;
+    --accent-foreground: 217 33% 2%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 15% 97%;
+
+    --border: 225 20% 15%;
+    --input: 225 20% 10%;
+    --ring: 195 100% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced glow effects for dark mode */
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.4);
+    --glow-secondary: 0 0 30px hsl(var(--secondary) / 0.4);
+    --glow-accent: 0 0 30px hsl(var(--accent) / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--secondary) / 0.05) 0%, transparent 50%);
+  }
+}
+
+@layer utilities {
+
+  /* Glassmorphism utilities */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  .glass-strong {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Neon glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Gradient text effects */
+  .gradient-text {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Particle background */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer components {
+
+  /* Portfolio button variants */
+  .btn-neon {
+    @apply relative px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply bg-transparent border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-primary-foreground hover:shadow-lg;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--primary) / 0.1) 50%, transparent 70%);
+    background-size: 200% 100%;
+    transition: var(--transition-smooth), background-position 0.3s ease;
+  }
+
+  .btn-neon:hover {
+    background-position: 100% 0;
+    box-shadow: var(--glow-primary);
+  }
+
+  .btn-ghost-glow {
+    @apply relative px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply bg-card/50 text-foreground border border-border/30;
+    @apply hover:bg-card hover:border-primary/50 hover:text-primary;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-ghost-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+}
+
+/* Keyframes for animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "name": "A Punith Kumar",
+    "initials": "PK",
+    "role": "Computer Science Engineering Graduate",
+    "shortRole": "Full-Stack Developer",
+    "availability": "Open to software development opportunities",
+    "location": "Based in Chittoor, Andhra Pradesh, India."
+  },
+  "navigation": [
+    { "label": "Profile", "href": "#profile" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Education", "href": "#education" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "lead": "Full-stack developer and Computer Science Engineering graduate focused on scalable systems, AI-driven solutions, and clean web experiences.",
+    "primaryAction": "View Projects",
+    "secondaryAction": "Download Resume",
+    "resumeUrl": "/Punith_Kumar_Resume.pdf",
+    "visualUrl": "/assets/portfolio-visual.svg",
+    "visualAlt": "Abstract portfolio dashboard showing code, AI, and project work",
+    "visualLabel": "Portfolio visual summary",
+    "stats": [
+      { "value": 8.8, "suffix": "", "label": "Final CGPA" },
+      { "value": 50, "suffix": "+", "label": "LeetCode problems" },
+      { "value": 2026, "suffix": "", "label": "Graduated" }
+    ]
+  },
+  "profile": {
+    "eyebrow": "Profile",
+    "title": "A graduate building practical systems with strong fundamentals.",
+    "paragraphs": [
+      "Computer Science Engineering graduate with strong foundations in Data Structures, Algorithms, and Full-Stack Development. Proficient in Java, Python, and modern web technologies.",
+      "Passionate about building scalable systems, applying AI-driven solutions to real-world challenges, and using generative AI tools to optimize workflows. Demonstrated leadership and communication through academic projects and collaborations."
+    ]
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Tools I use to design, build, and ship.",
+    "groups": [
+      {
+        "title": "Languages",
+        "items": ["Python", "Java", "C", "JavaScript"]
+      },
+      {
+        "title": "Frameworks & Web",
+        "items": ["React", "Node.js", "HTML", "CSS"]
+      },
+      {
+        "title": "Database & Tools",
+        "items": ["MySQL", "Git", "VS Code", "IntelliJ IDEA", "Eclipse", "Aiven Cloud"]
+      },
+      {
+        "title": "AI & Collaboration",
+        "items": ["ChatGPT", "Gemini", "GitHub Copilot", "Claude", "Leadership", "Problem Solving"]
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Selected work with practical impact.",
+    "items": [
+      {
+        "title": "Brain Tumor Detection",
+        "year": "2025 - Present",
+        "category": "AI",
+        "tag": "AI + Healthcare",
+        "tagTone": "ai",
+        "summary": "Deep learning-based medical imaging system to detect and classify brain tumors from MRI scans.",
+        "points": [
+          "Implemented preprocessing, enhancement, segmentation, and CNN-based classification.",
+          "Focused on improving detection accuracy through image processing workflows."
+        ],
+        "tech": ["Python", "TensorFlow", "PyTorch", "Image Processing"]
+      },
+      {
+        "title": "Campus Bridge",
+        "year": "2024",
+        "category": "Full Stack",
+        "tag": "Full Stack",
+        "tagTone": "platform",
+        "summary": "Role-based academic LMS and coding platform for students, faculty, and administrators.",
+        "points": [
+          "Built dashboards, assignment portal, attendance tracking, and performance analytics.",
+          "Integrated real-time code compilation for academic programming workflows."
+        ],
+        "tech": ["React", "Node.js", "MySQL"]
+      }
+    ]
+  },
+  "education": {
+    "eyebrow": "Education",
+    "title": "Completed academic foundation.",
+    "items": [
+      {
+        "date": "2022 - 2026",
+        "school": "Mohan Babu University, Tirupati",
+        "detail": "B.Tech - Computer Science Engineering",
+        "result": "Final CGPA: 8.8",
+        "status": "Completed"
+      },
+      {
+        "date": "2020 - 2022",
+        "school": "RK Vidyalaya Jr College, Chittoor",
+        "detail": "Intermediate (MPC)",
+        "result": "Percentage: 80.7%",
+        "status": "Completed"
+      },
+      {
+        "date": "2019 - 2020",
+        "school": "Zilla Parishad Govt High School, Chittoor",
+        "detail": "SSC",
+        "result": "Percentage: 98%",
+        "status": "Completed"
+      }
+    ]
+  },
+  "certifications": {
+    "eyebrow": "Certifications",
+    "title": "Learning that supports real project work.",
+    "items": [
+      {
+        "title": "Certified System Administrator - ServiceNow",
+        "year": "2025",
+        "href": "https://drive.google.com/file/d/1WeCsG10b3paqWezRIk-pCZhyhAXuvbtv/view?usp=sharing"
+      },
+      {
+        "title": "Certified Application Developer - ServiceNow",
+        "year": "2025",
+        "href": "https://drive.google.com/file/d/1PimaYW63saSEfDJZQqSAvX61bd-gdzNr/view?usp=sharing"
+      },
+      {
+        "title": "Python Essentials - Cisco",
+        "year": "2024"
+      },
+      {
+        "title": "Introduction to Cybersecurity - Cisco",
+        "year": "2024"
+      },
+      {
+        "title": "Google Cloud Computing Foundations",
+        "year": "2023",
+        "href": "https://drive.google.com/file/d/1r7MOZBeXt4Gs-JtbboV4upeRctTNGykE/view?usp=sharing"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's build something thoughtful.",
+    "links": [
+      { "label": "arigalapunith0081@gmail.com", "href": "mailto:arigalapunith0081@gmail.com" },
+      { "label": "+91 9392465021", "href": "tel:+919392465021" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/arigala-punithkumar" },
+      { "label": "GitHub", "href": "https://github.com/ArigalaPunithKumar" },
+      { "label": "LeetCode", "href": "https://leetcode.com/u/arigalapunith0081/" }
+    ]
+  },
+  "footerText": "Built with React and driven by editable portfolio data."
+}

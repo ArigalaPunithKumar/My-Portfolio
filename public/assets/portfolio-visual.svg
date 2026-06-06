@@ -1,0 +1,41 @@
+<svg width="900" height="680" viewBox="0 0 900 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio dashboard visual</title>
+  <desc id="desc">A polished dashboard-inspired visual with code, projects, skills, and AI elements.</desc>
+  <rect width="900" height="680" fill="#FAFAFA"/>
+  <rect x="86" y="72" width="728" height="536" rx="8" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="86" y="72" width="728" height="70" rx="8" fill="#1F2937"/>
+  <circle cx="126" cy="107" r="8" fill="#EF4444"/>
+  <circle cx="152" cy="107" r="8" fill="#F59E0B"/>
+  <circle cx="178" cy="107" r="8" fill="#10B981"/>
+  <rect x="244" y="98" width="260" height="14" rx="7" fill="#E5E7EB" opacity="0.34"/>
+  <rect x="120" y="178" width="240" height="260" rx="8" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <rect x="146" y="205" width="108" height="14" rx="7" fill="#2563EB"/>
+  <rect x="146" y="240" width="188" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="146" y="270" width="144" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="146" y="300" width="176" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="146" y="346" width="78" height="32" rx="8" fill="#DBEAFE"/>
+  <rect x="236" y="346" width="92" height="32" rx="8" fill="#D1FAE5"/>
+  <rect x="392" y="178" width="360" height="150" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <path d="M431 238L464 214V230L447 238L464 246V262L431 238Z" fill="#2563EB"/>
+  <path d="M541 214H654" stroke="#1F2937" stroke-width="13" stroke-linecap="round"/>
+  <path d="M541 252H704" stroke="#94A3B8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M541 283H667" stroke="#CBD5E1" stroke-width="12" stroke-linecap="round"/>
+  <rect x="392" y="358" width="170" height="160" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <rect x="420" y="388" width="60" height="60" rx="8" fill="#2563EB"/>
+  <path d="M445 417L453 425L470 403" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="420" y="472" width="114" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="420" y="498" width="84" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="590" y="358" width="162" height="160" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <circle cx="671" cy="429" r="46" fill="#ECFDF5"/>
+  <circle cx="671" cy="429" r="22" fill="#059669"/>
+  <path d="M671 383V362M671 496V475M717 429H738M604 429H625M704 396L719 381M623 477L638 462M704 462L719 477M623 381L638 396" stroke="#059669" stroke-width="8" stroke-linecap="round"/>
+  <rect x="120" y="466" width="240" height="52" rx="8" fill="#1F2937"/>
+  <rect x="144" y="486" width="92" height="12" rx="6" fill="#F9FAFB"/>
+  <rect x="252" y="486" width="72" height="12" rx="6" fill="#60A5FA"/>
+  <circle cx="748" cy="145" r="54" fill="#FEF3C7"/>
+  <path d="M725 147L742 164L776 124" stroke="#D97706" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="118" cy="566" r="34" fill="#DBEAFE"/>
+  <path d="M104 566H136M120 550V582" stroke="#2563EB" stroke-width="8" stroke-linecap="round"/>
+  <path d="M790 560C770 538 741 529 711 536C682 543 661 563 650 592" stroke="#2563EB" stroke-width="7" stroke-linecap="round"/>
+  <path d="M742 559C725 557 708 565 698 579" stroke="#059669" stroke-width="7" stroke-linecap="round"/>
+</svg>

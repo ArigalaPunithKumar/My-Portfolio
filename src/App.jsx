@@ -1,4 +1,26 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { ExternalLink, Mail, Download, ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+};
 
 function Header({ activeSection, identity, navigation }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,27 +69,35 @@ function Header({ activeSection, identity, navigation }) {
 
 function SectionHeading({ eyebrow, title }) {
   return (
-    <div className="section-heading reveal" data-reveal>
+    <motion.div 
+      className="section-heading"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <p className="eyebrow">{eyebrow}</p>
       <h2>{title}</h2>
-    </div>
+    </motion.div>
   );
 }
 
 function AnimatedStat({ stat }) {
   const [displayValue, setDisplayValue] = useState("0");
   const statRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const element = statRef.current;
-    if (!element) return undefined;
+    if (!element || hasAnimated) return undefined;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
+        setHasAnimated(true);
 
         const startTime = performance.now();
-        const duration = 1100;
+        const duration = 1500;
         const decimals = Number.isInteger(stat.value) ? 0 : 1;
 
         const animate = (time) => {
@@ -86,25 +116,31 @@ function AnimatedStat({ stat }) {
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [stat.value]);
+  }, [stat.value, hasAnimated]);
 
   return (
-    <span ref={statRef}>
+    <motion.span variants={scaleIn} ref={statRef}>
       <strong>
         {displayValue}
         {stat.suffix}
       </strong>
       {stat.label}
-    </span>
+    </motion.span>
   );
 }
 
 function App() {
   const [portfolio, setPortfolio] = useState(null);
   const [loadError, setLoadError] = useState("");
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState("profile");
+  const [activeSection, setActiveSection] = useState("home");
   const [projectFilter, setProjectFilter] = useState("All");
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const controller = new AbortController();
@@ -129,44 +165,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const updateProgress = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0);
-    };
-
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    return () => window.removeEventListener("scroll", updateProgress);
-  }, []);
-
-  useEffect(() => {
-    if (!portfolio) return undefined;
-
-    const revealItems = document.querySelectorAll("[data-reveal]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.14 }
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, [portfolio, projectFilter]);
-
-  useEffect(() => {
     if (!portfolio) return undefined;
 
     const pageSections = document.querySelectorAll("main section[id]");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.target.id !== "home") {
+          if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
@@ -188,6 +193,15 @@ function App() {
     if (projectFilter === "All") return portfolio.projects.items;
     return portfolio.projects.items.filter((project) => project.category === projectFilter);
   }, [portfolio, projectFilter]);
+
+  // Helper function to map generic icon strings or URLs to Lucide/React icons
+  const getSocialIcon = (url) => {
+    if (url.includes("github.com")) return <FaGithub size={20} />;
+    if (url.includes("linkedin.com")) return <FaLinkedin size={20} />;
+    if (url.includes("twitter.com") || url.includes("x.com")) return <FaTwitter size={20} />;
+    if (url.includes("mailto:")) return <Mail size={20} />;
+    return <ExternalLink size={20} />;
+  };
 
   if (loadError) {
     return (
@@ -212,67 +226,99 @@ function App() {
 
   return (
     <>
-      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} aria-hidden="true" />
+      <motion.div className="scroll-progress" style={{ scaleX }} aria-hidden="true" />
       <Header activeSection={activeSection} identity={identity} navigation={navigation} />
 
       <main>
         <section id="home" className="hero section-pad">
-          <div className="hero-copy reveal" data-reveal>
-            <div className="status-line">
+          <motion.div 
+            className="hero-copy"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={fadeInUp} className="status-line">
               <span className="status-dot" aria-hidden="true" />
               {identity.availability}
-            </div>
-            <p className="eyebrow">{identity.role}</p>
-            <h1>{identity.name}</h1>
-            <p className="hero-lead">{hero.lead}</p>
-            <div className="hero-actions">
+            </motion.div>
+            <motion.p variants={fadeInUp} className="eyebrow">{identity.role}</motion.p>
+            <motion.h1 variants={fadeInUp}>{identity.name}</motion.h1>
+            <motion.p variants={fadeInUp} className="hero-lead">{hero.lead}</motion.p>
+            <motion.div variants={fadeInUp} className="hero-actions">
               <a className="button primary" href="#projects">
-                {hero.primaryAction}
+                {hero.primaryAction} <ArrowRight size={18} style={{marginLeft: '8px'}}/>
               </a>
               <a className="button secondary" href={hero.resumeUrl} download>
-                {hero.secondaryAction}
+                {hero.secondaryAction} <Download size={18} style={{marginLeft: '8px'}}/>
               </a>
-            </div>
-            <div className="quick-facts" aria-label="Highlights">
+            </motion.div>
+            
+            <motion.div variants={staggerContainer} className="quick-facts" aria-label="Highlights">
               {hero.stats.map((stat) => (
                 <AnimatedStat stat={stat} key={stat.label} />
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <figure className="hero-visual reveal" data-reveal aria-label={hero.visualLabel}>
+          <motion.figure 
+            className="hero-visual"
+            initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
+            animate={{ opacity: 1, scale: 1, rotateY: -5, rotateX: 5 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            aria-label={hero.visualLabel}
+          >
             <img src={hero.visualUrl} alt={hero.visualAlt} />
-          </figure>
+          </motion.figure>
         </section>
 
         <section id="profile" className="section-pad split-section">
           <SectionHeading eyebrow={profile.eyebrow} title={profile.title} />
-          <div className="profile-card reveal" data-reveal>
+          <motion.div 
+            className="profile-card"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {profile.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <section id="skills" className="section-pad">
           <SectionHeading eyebrow={skills.eyebrow} title={skills.title} />
-          <div className="skill-layout">
+          <motion.div 
+            className="skill-layout"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {skills.groups.map((group) => (
-              <article className="skill-group reveal" data-reveal key={group.title}>
+              <motion.article variants={scaleIn} className="skill-group" key={group.title}>
                 <h3>{group.title}</h3>
                 <div className="skill-list">
                   {group.items.map((skill) => (
                     <span key={skill}>{skill}</span>
                   ))}
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <section id="projects" className="section-pad project-section">
           <SectionHeading eyebrow={projects.eyebrow} title={projects.title} />
-          <div className="project-filter reveal" data-reveal aria-label="Filter projects">
+          
+          <motion.div 
+            className="project-filter"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            aria-label="Filter projects"
+          >
             {projectCategories.map((category) => (
               <button
                 type="button"
@@ -284,11 +330,18 @@ function App() {
                 {category}
               </button>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="project-grid">
+          <motion.div 
+            className="project-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            key={projectFilter} // Re-animate on filter change
+          >
             {visibleProjects.map((project) => (
-              <article className="project-card reveal" data-reveal key={project.title}>
+              <motion.article variants={fadeInUp} className="project-card" key={project.title}>
                 <div className="project-top">
                   <span className={`project-tag ${project.tagTone}`}>{project.tag}</span>
                   <span className="project-year">{project.year}</span>
@@ -305,16 +358,22 @@ function App() {
                     <span key={tech}>{tech}</span>
                   ))}
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <section id="education" className="section-pad">
           <SectionHeading eyebrow={education.eyebrow} title={education.title} />
-          <div className="timeline">
+          <motion.div 
+            className="timeline"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {education.items.map((item) => (
-              <article className="timeline-item reveal" data-reveal key={item.school}>
+              <motion.article variants={fadeInUp} className="timeline-item" key={item.school}>
                 <span className="timeline-dot" />
                 <div>
                   <div className="education-meta">
@@ -325,14 +384,20 @@ function App() {
                   <p>{item.detail}</p>
                   <strong>{item.result}</strong>
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <section id="certifications" className="section-pad">
           <SectionHeading eyebrow={certifications.eyebrow} title={certifications.title} />
-          <div className="cert-grid">
+          <motion.div 
+            className="cert-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
             {certifications.items.map((cert) => {
               const content = (
                 <>
@@ -342,38 +407,47 @@ function App() {
               );
 
               return cert.href ? (
-                <a className="cert-card reveal" data-reveal href={cert.href} target="_blank" rel="noreferrer" key={cert.title}>
+                <motion.a variants={scaleIn} className="cert-card" href={cert.href} target="_blank" rel="noreferrer" key={cert.title}>
                   {content}
-                </a>
+                </motion.a>
               ) : (
-                <div className="cert-card reveal" data-reveal key={cert.title}>
+                <motion.div variants={scaleIn} className="cert-card" key={cert.title}>
                   {content}
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </section>
 
-        <section id="contact" className="contact section-pad reveal" data-reveal>
-          <div>
-            <p className="eyebrow">{contact.eyebrow}</p>
-            <h2>{contact.title}</h2>
-            <p>{identity.location}</p>
-          </div>
+        <section id="contact" className="section-pad">
+          <motion.div 
+            className="contact"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div>
+              <p className="eyebrow">{contact.eyebrow}</p>
+              <h2>{contact.title}</h2>
+              <p>{identity.location}</p>
+            </div>
 
-          <div className="contact-actions">
-            {contact.links.map((link) => (
-              <a
-                className="contact-link"
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                key={link.href}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+            <div className="contact-actions">
+              {contact.links.map((link) => (
+                <a
+                  className="contact-link"
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                  key={link.href}
+                >
+                  {getSocialIcon(link.href)}
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </section>
       </main>
 

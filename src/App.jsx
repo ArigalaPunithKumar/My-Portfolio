@@ -358,6 +358,10 @@ function App() {
                     <span key={tech}>{tech}</span>
                   ))}
                 </div>
+                <div className="project-links">
+                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noreferrer"><Github size={17} /> Source code <ExternalLink size={15} /></a>}
+                  {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo <ExternalLink size={15} /></a>}
+                </div>
               </motion.article>
             ))}
           </motion.div>

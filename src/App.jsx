@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ExternalLink, Mail, Download, ArrowRight } from "lucide-react";
+import { ExternalLink, Mail, Download, ArrowRight, Github } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import portfolioData from "./portfolio-data.json";
 

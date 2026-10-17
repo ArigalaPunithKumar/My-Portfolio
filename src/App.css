@@ -910,3 +910,44 @@ a.cert-card:hover::before {
   }
   .cert-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Enhanced motion, visual polish, keyboard focus, and portrait treatment */
+:root { --accent:#8b5cf6; --accent-light:#a78bfa; --accent-dark:#6d28d9; --cyan:#22d3ee; --fuchsia:#ec4899; }
+::selection { background:rgba(139,92,246,.42); color:#fff; }
+:focus-visible { outline:3px solid var(--cyan); outline-offset:4px; }
+.site-header { transition:background .25s ease, box-shadow .25s ease; }
+.nav-links a { position:relative; }
+.nav-links a::after { content:""; position:absolute; left:12px; right:12px; bottom:5px; height:2px; border-radius:4px; background:linear-gradient(90deg,var(--fuchsia),var(--cyan)); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+.nav-links a:hover::after,.nav-links a.active::after { transform:scaleX(1); }
+.hero { position:relative; isolation:isolate; }
+.hero::before { content:""; position:absolute; width:420px; height:420px; border-radius:50%; top:4%; right:2%; z-index:-1; background:radial-gradient(circle,rgba(139,92,246,.24),rgba(34,211,238,.09) 48%,transparent 70%); filter:blur(10px); animation:float-glow 9s ease-in-out infinite alternate; pointer-events:none; }
+.hero-visual { align-self:center; max-width:490px; justify-self:center; width:100%; }
+.hero-visual img { height:auto; min-height:0; max-height:570px; object-fit:cover; border-radius:30px; border:1px solid rgba(167,139,250,.5); box-shadow:0 28px 90px rgba(76,29,149,.32),0 0 0 8px rgba(139,92,246,.06); animation:portrait-float 6s ease-in-out infinite; }
+.hero-visual:hover img { animation-play-state:paused; box-shadow:0 28px 90px rgba(34,211,238,.22),0 0 0 8px rgba(34,211,238,.08); }
+h1 { background-image:linear-gradient(105deg,#fff 10%,#c4b5fd 48%,#67e8f9 82%,#f9a8d4); background-size:180% auto; animation:title-sheen 9s linear infinite; }
+.button.primary { background:linear-gradient(120deg,#7c3aed,#2563eb 55%,#0891b2); background-size:180% auto; transition:transform .25s ease,box-shadow .25s ease,background-position .35s ease; }
+.button.primary:hover { background-position:100% center; box-shadow:0 14px 38px rgba(124,58,237,.4); }
+.skill-group,.project-card,.cert-card,.timeline-item,.profile-card { transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,background .28s ease; }
+.skill-group:hover,.project-card:hover,.timeline-item:hover,.profile-card:hover { border-color:rgba(167,139,250,.55); box-shadow:0 20px 55px rgba(76,29,149,.16); }
+.skill-group:hover { transform:translateY(-7px); }
+.project-card { display:flex; flex-direction:column; }
+.project-links { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+.project-link { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(167,139,250,.3); border-radius:10px; padding:9px 13px; color:#ddd6fe; font-size:.92rem; font-weight:800; transition:transform .2s ease,background .2s ease,border-color .2s ease; }
+.project-link:hover { transform:translateY(-2px); background:rgba(139,92,246,.15); border-color:var(--accent-light); }
+.project-card ul { padding-left:20px; }
+.project-card li::marker { color:var(--cyan); }
+.contact { background:linear-gradient(125deg,rgba(124,58,237,.26),rgba(37,99,235,.18) 52%,rgba(8,145,178,.16)); border-color:rgba(167,139,250,.3); }
+.cert-card { gap:20px; }
+.cert-card:hover { transform:translateY(-6px); }
+@keyframes portrait-float { 0%,100%{transform:translateY(0) rotateY(-3deg)} 50%{transform:translateY(-10px) rotateY(2deg)} }
+@keyframes float-glow { from{transform:translate3d(-12px,0,0) scale(.96)} to{transform:translate3d(14px,18px,0) scale(1.06)} }
+@keyframes title-sheen { 0%,100%{background-position:0% center} 50%{background-position:100% center} }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
+@media(max-width:760px) {
+  .hero::before { width:260px;height:260px;right:10%; }
+  .hero-visual { max-width:340px; }
+  .hero-visual img { max-height:none; }
+}

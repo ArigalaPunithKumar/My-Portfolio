@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ExternalLink, Mail, Download, ArrowRight, Github } from "lucide-react";
+import { ExternalLink, Mail, Download, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import portfolioData from "./portfolio-data.json";
 
@@ -342,7 +342,7 @@ function App() {
                   ))}
                 </div>
                 <div className="project-links">
-                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noreferrer"><Github size={17} /> Source code <ExternalLink size={15} /></a>}
+                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noreferrer"><ExternalLink size={17} /> Source code <ExternalLink size={15} /></a>}
                   {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo <ExternalLink size={15} /></a>}
                 </div>
               </motion.article>

@@ -6,7 +6,7 @@
     "shortRole": "Software Developer Portfolio",
     "availability": "Open to entry-level software development opportunities",
     "location": "Bengaluru, Karnataka, India",
-    "profileImage": "/assets/profile-avatar.svg"
+    "profileImage": "/assets/punith-profile.svg"
   },
   "navigation": [
     {
@@ -16,6 +16,10 @@
     {
       "label": "Skills",
       "href": "#skills"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
     },
     {
       "label": "Projects",
@@ -39,8 +43,8 @@
     "primaryAction": "Explore my work",
     "secondaryAction": "Download resume",
     "resumeUrl": "/Punith_Kumar_Resume.pdf",
-    "visualUrl": "/assets/profile-avatar.svg",
-    "visualAlt": "Illustrated profile avatar for A Punith Kumar",
+    "visualUrl": "/assets/punith-profile.svg",
+    "visualAlt": "A Punith Kumar wearing a burgundy shirt in front of a historic red-brick building",
     "visualLabel": "Developer portrait",
     "stats": [
       {

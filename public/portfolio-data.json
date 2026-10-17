@@ -44,19 +44,15 @@
     "visualLabel": "Developer portrait",
     "stats": [
       {
-        "value": 8.8,
+        "value": 8.9,
         "suffix": "",
-        "label": "CGPA shown on portfolio"
+        "label": "CGPA"
       },
       {
-        "value": 50,
+        "value": 0,
         "suffix": "+",
-        "label": "Coding practice target"
-      },
-      {
-        "value": 2026,
-        "suffix": "",
-        "label": "Graduation year"
+        "label": "LeetCode problems solved",
+        "dynamic": "leetcode"
       }
     ]
   },
@@ -203,7 +199,7 @@
         "date": "2022 – 2026",
         "school": "Mohan Babu University, Tirupati",
         "detail": "B.Tech — Computer Science and Engineering",
-        "result": "CGPA: 8.8 (confirm/update if your final transcript differs)",
+        "result": "8.9 CGPA",
         "status": "Graduate"
       },
       {

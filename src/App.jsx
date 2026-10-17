@@ -142,8 +142,8 @@ function AnimatedStat({ stat }) {
   return (
     <motion.span variants={scaleIn} ref={statRef}>
       <strong>
-        {displayValue}
-        {stat.suffix}
+        {stat.dynamic === "leetcode" ? (liveValue ?? "—") : displayValue}
+        {stat.dynamic === "leetcode" ? "" : stat.suffix}
       </strong>
       {stat.label}
     </motion.span>

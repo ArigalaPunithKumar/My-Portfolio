@@ -311,6 +311,30 @@ function App() {
           </motion.div>
         </section>
 
+        <section id="experience" className="section-pad experience-section">
+          <SectionHeading eyebrow="Professional experience" title="Work experience" />
+          <motion.article
+            className="experience-card"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div className="experience-heading">
+              <div>
+                <p className="eyebrow">Tap Academy · Onsite</p>
+                <h3>Java Full Stack Developer Intern</h3>
+              </div>
+              <span className="experience-year">2026</span>
+            </div>
+            <ul>
+              <li>Received training in Core Java, Advanced Java, JDBC, J2EE, Servlets, Spring, Hibernate, MySQL, and frontend development.</li>
+              <li>Practiced OOP, Collections, Multithreading, Exception Handling, and Java 8 features, including Lambda Expressions and Stream API.</li>
+              <li>Applied full-stack development concepts through project work involving responsive interfaces and database integration.</li>
+            </ul>
+          </motion.article>
+        </section>
+
         <section id="projects" className="section-pad project-section">
           <SectionHeading eyebrow={projects.eyebrow} title={projects.title} />
           

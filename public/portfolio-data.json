@@ -134,7 +134,8 @@
           "Node.js",
           "MySQL"
         ],
-        "repoUrl": "https://github.com/ArigalaPunithKumar/Campus-Bridge-LMS"
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Campus-Bridge-LMS",
+        "demoUrl": "https://student-management-system-zeta-lyart.vercel.app/auth"
       },
       {
         "title": "Brain Tumor Classification",
@@ -170,7 +171,8 @@
           "Node.js",
           "MySQL"
         ],
-        "repoUrl": "https://github.com/ArigalaPunithKumar/Online-Food-Delivery-Application"
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Online-Food-Delivery-Application",
+        "demoUrl": "https://arigalapunithkumar.github.io/Online-Food-Delivery-Application/"
       },
       {
         "title": "Travel Application",
@@ -188,7 +190,8 @@
           "CSS",
           "Web Development"
         ],
-        "repoUrl": "https://github.com/ArigalaPunithKumar/Travel-Application"
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Travel-Application",
+        "demoUrl": "https://travel-app-orpin-nine.vercel.app/"
       }
     ]
   },

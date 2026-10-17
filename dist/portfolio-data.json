@@ -8,11 +8,26 @@
     "location": "Based in Chittoor, Andhra Pradesh, India."
   },
   "navigation": [
-    { "label": "Profile", "href": "#profile" },
-    { "label": "Skills", "href": "#skills" },
-    { "label": "Projects", "href": "#projects" },
-    { "label": "Education", "href": "#education" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Profile",
+      "href": "#profile"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "label": "Education",
+      "href": "#education"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "hero": {
     "lead": "Full-stack developer and Computer Science Engineering graduate focused on scalable systems, AI-driven solutions, and clean web experiences.",
@@ -23,9 +38,21 @@
     "visualAlt": "Abstract portfolio dashboard showing code, AI, and project work",
     "visualLabel": "Portfolio visual summary",
     "stats": [
-      { "value": 8.8, "suffix": "", "label": "Final CGPA" },
-      { "value": 50, "suffix": "+", "label": "LeetCode problems" },
-      { "value": 2026, "suffix": "", "label": "Graduated" }
+      {
+        "value": 8.8,
+        "suffix": "",
+        "label": "Final CGPA"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "LeetCode problems"
+      },
+      {
+        "value": 2026,
+        "suffix": "",
+        "label": "Graduated"
+      }
     ]
   },
   "profile": {
@@ -42,19 +69,43 @@
     "groups": [
       {
         "title": "Languages",
-        "items": ["Python", "Java", "C", "JavaScript"]
+        "items": [
+          "Python",
+          "Java",
+          "C",
+          "JavaScript"
+        ]
       },
       {
         "title": "Frameworks & Web",
-        "items": ["React", "Node.js", "HTML", "CSS"]
+        "items": [
+          "React",
+          "Node.js",
+          "HTML",
+          "CSS"
+        ]
       },
       {
         "title": "Database & Tools",
-        "items": ["MySQL", "Git", "VS Code", "IntelliJ IDEA", "Eclipse", "Aiven Cloud"]
+        "items": [
+          "MySQL",
+          "Git",
+          "VS Code",
+          "IntelliJ IDEA",
+          "Eclipse",
+          "Aiven Cloud"
+        ]
       },
       {
         "title": "AI & Collaboration",
-        "items": ["ChatGPT", "Gemini", "GitHub Copilot", "Claude", "Leadership", "Problem Solving"]
+        "items": [
+          "ChatGPT",
+          "Gemini",
+          "GitHub Copilot",
+          "Claude",
+          "Leadership",
+          "Problem Solving"
+        ]
       }
     ]
   },
@@ -73,7 +124,12 @@
           "Implemented preprocessing, enhancement, segmentation, and CNN-based classification.",
           "Focused on improving detection accuracy through image processing workflows."
         ],
-        "tech": ["Python", "TensorFlow", "PyTorch", "Image Processing"]
+        "tech": [
+          "Python",
+          "TensorFlow",
+          "PyTorch",
+          "Image Processing"
+        ]
       },
       {
         "title": "Campus Bridge",
@@ -86,7 +142,11 @@
           "Built dashboards, assignment portal, attendance tracking, and performance analytics.",
           "Integrated real-time code compilation for academic programming workflows."
         ],
-        "tech": ["React", "Node.js", "MySQL"]
+        "tech": [
+          "React",
+          "Node.js",
+          "MySQL"
+        ]
       }
     ]
   },
@@ -150,11 +210,26 @@
     "eyebrow": "Contact",
     "title": "Let's build something thoughtful.",
     "links": [
-      { "label": "arigalapunith0081@gmail.com", "href": "mailto:arigalapunith0081@gmail.com" },
-      { "label": "+91 9392465021", "href": "tel:+919392465021" },
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/arigala-punithkumar" },
-      { "label": "GitHub", "href": "https://github.com/ArigalaPunithKumar" },
-      { "label": "LeetCode", "href": "https://leetcode.com/u/arigalapunith0081/" }
+      {
+        "label": "arigalapunith0081@gmail.com",
+        "href": "mailto:arigalapunith0081@gmail.com"
+      },
+      {
+        "label": "+91 9392465021",
+        "href": "tel:+919392465021"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/arigala-punithkumar"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ArigalaPunithKumar"
+      },
+      {
+        "label": "LeetCode",
+        "href": "https://leetcode.com/u/arigalapunith0081/"
+      }
     ]
   },
   "footerText": "Built with React and driven by editable portfolio data."

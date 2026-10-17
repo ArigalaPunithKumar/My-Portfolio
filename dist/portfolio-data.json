@@ -2,14 +2,15 @@
   "identity": {
     "name": "A Punith Kumar",
     "initials": "PK",
-    "role": "Computer Science Engineering Graduate",
-    "shortRole": "Full-Stack Developer",
-    "availability": "Open to software development opportunities",
-    "location": "Based in Chittoor, Andhra Pradesh, India."
+    "role": "Full-Stack Developer · Software Engineer",
+    "shortRole": "Software Developer Portfolio",
+    "availability": "Open to entry-level software development opportunities",
+    "location": "Chittoor, Andhra Pradesh, India",
+    "profileImage": "/assets/profile-avatar.svg"
   },
   "navigation": [
     {
-      "label": "Profile",
+      "label": "About",
       "href": "#profile"
     },
     {
@@ -25,178 +26,219 @@
       "href": "#education"
     },
     {
+      "label": "Certifications",
+      "href": "#certifications"
+    },
+    {
       "label": "Contact",
       "href": "#contact"
     }
   ],
   "hero": {
-    "lead": "Full-stack developer and Computer Science Engineering graduate focused on scalable systems, AI-driven solutions, and clean web experiences.",
-    "primaryAction": "View Projects",
-    "secondaryAction": "Download Resume",
+    "lead": "I build practical web applications and AI-powered solutions with clean code, thoughtful user experiences, and strong software engineering fundamentals.",
+    "primaryAction": "Explore my work",
+    "secondaryAction": "Download resume",
     "resumeUrl": "/Punith_Kumar_Resume.pdf",
-    "visualUrl": "/assets/portfolio-visual.svg",
-    "visualAlt": "Abstract portfolio dashboard showing code, AI, and project work",
-    "visualLabel": "Portfolio visual summary",
+    "visualUrl": "/assets/profile-avatar.svg",
+    "visualAlt": "Illustrated profile avatar for A Punith Kumar",
+    "visualLabel": "Developer portrait",
     "stats": [
       {
         "value": 8.8,
         "suffix": "",
-        "label": "Final CGPA"
+        "label": "CGPA shown on portfolio"
       },
       {
         "value": 50,
         "suffix": "+",
-        "label": "LeetCode problems"
+        "label": "Coding practice target"
       },
       {
         "value": 2026,
         "suffix": "",
-        "label": "Graduated"
+        "label": "Graduation year"
       }
     ]
   },
   "profile": {
-    "eyebrow": "Profile",
-    "title": "A graduate building practical systems with strong fundamentals.",
+    "eyebrow": "A little about me",
+    "title": "Curious by nature. Engineer by mindset.",
     "paragraphs": [
-      "Computer Science Engineering graduate with strong foundations in Data Structures, Algorithms, and Full-Stack Development. Proficient in Java, Python, and modern web technologies.",
-      "Passionate about building scalable systems, applying AI-driven solutions to real-world challenges, and using generative AI tools to optimize workflows. Demonstrated leadership and communication through academic projects and collaborations."
+      "I am a recent Computer Science Engineering graduate interested in backend development, full-stack applications, data structures and algorithms, and practical AI solutions.",
+      "I enjoy turning ideas into usable products, learning new tools, and improving applications through clear architecture, responsive design, and careful testing. I am looking for an entry-level opportunity where I can contribute, learn from a team, and grow as a software engineer."
     ]
   },
   "skills": {
-    "eyebrow": "Skills",
-    "title": "Tools I use to design, build, and ship.",
+    "eyebrow": "My toolkit",
+    "title": "Technologies I work with",
     "groups": [
       {
         "title": "Languages",
         "items": [
-          "Python",
           "Java",
+          "Python",
           "C",
           "JavaScript"
         ]
       },
       {
-        "title": "Frameworks & Web",
+        "title": "Frontend",
         "items": [
+          "HTML5",
+          "CSS3",
           "React",
+          "Vite",
+          "Responsive UI"
+        ]
+      },
+      {
+        "title": "Backend & Data",
+        "items": [
           "Node.js",
-          "HTML",
-          "CSS"
-        ]
-      },
-      {
-        "title": "Database & Tools",
-        "items": [
+          "Express.js",
+          "SQL",
           "MySQL",
-          "Git",
-          "VS Code",
-          "IntelliJ IDEA",
-          "Eclipse",
-          "Aiven Cloud"
+          "REST APIs"
         ]
       },
       {
-        "title": "AI & Collaboration",
+        "title": "Tools & Foundations",
         "items": [
-          "ChatGPT",
-          "Gemini",
-          "GitHub Copilot",
-          "Claude",
-          "Leadership",
-          "Problem Solving"
+          "Git",
+          "GitHub",
+          "OOP",
+          "Data Structures",
+          "Algorithms",
+          "Debugging"
         ]
       }
     ]
   },
   "projects": {
-    "eyebrow": "Projects",
-    "title": "Selected work with practical impact.",
+    "eyebrow": "Selected projects",
+    "title": "Building things that solve real problems",
     "items": [
       {
-        "title": "Brain Tumor Detection",
-        "year": "2025 - Present",
-        "category": "AI",
-        "tag": "AI + Healthcare",
-        "tagTone": "ai",
-        "summary": "Deep learning-based medical imaging system to detect and classify brain tumors from MRI scans.",
-        "points": [
-          "Implemented preprocessing, enhancement, segmentation, and CNN-based classification.",
-          "Focused on improving detection accuracy through image processing workflows."
-        ],
-        "tech": [
-          "Python",
-          "TensorFlow",
-          "PyTorch",
-          "Image Processing"
-        ]
-      },
-      {
-        "title": "Campus Bridge",
-        "year": "2024",
+        "title": "Campus Bridge LMS",
+        "year": "2026",
         "category": "Full Stack",
-        "tag": "Full Stack",
+        "tag": "Learning platform",
         "tagTone": "platform",
-        "summary": "Role-based academic LMS and coding platform for students, faculty, and administrators.",
+        "summary": "A learning management platform concept connecting students, faculty, and administrators through academic workflows.",
         "points": [
-          "Built dashboards, assignment portal, attendance tracking, and performance analytics.",
-          "Integrated real-time code compilation for academic programming workflows."
+          "Organizes learning resources and course-related workflows.",
+          "Designed around role-based access and maintainable full-stack architecture."
         ],
         "tech": [
           "React",
           "Node.js",
           "MySQL"
-        ]
+        ],
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Campus-Bridge-LMS"
+      },
+      {
+        "title": "Brain Tumor Classification",
+        "year": "2026",
+        "category": "AI",
+        "tag": "AI & Healthcare",
+        "tagTone": "ai",
+        "summary": "An MRI image analysis research project exploring image enhancement and brain tumour classification with deep learning.",
+        "points": [
+          "Uses a documented preprocessing and model-evaluation workflow.",
+          "Focuses on accuracy, precision, recall, and F1-score for evaluation."
+        ],
+        "tech": [
+          "Python",
+          "Deep Learning",
+          "Computer Vision"
+        ],
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Brain-Tumour-Classification-using-AI"
+      },
+      {
+        "title": "Online Food Delivery",
+        "year": "2026",
+        "category": "Full Stack",
+        "tag": "Web application",
+        "tagTone": "platform",
+        "summary": "A food delivery application project designed around browsing food options and common ordering workflows.",
+        "points": [
+          "Separates frontend experience from backend services.",
+          "Built with deployment and maintainability in mind."
+        ],
+        "tech": [
+          "JavaScript",
+          "Node.js",
+          "MySQL"
+        ],
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Online-Food-Delivery-Application"
+      },
+      {
+        "title": "Travel Application",
+        "year": "2026",
+        "category": "Web",
+        "tag": "Travel experience",
+        "tagTone": "ai",
+        "summary": "A travel-focused application project for exploring and organizing travel-related information.",
+        "points": [
+          "Emphasizes a responsive interface and clear navigation.",
+          "Repository contains the project source for further exploration."
+        ],
+        "tech": [
+          "JavaScript",
+          "CSS",
+          "Web Development"
+        ],
+        "repoUrl": "https://github.com/ArigalaPunithKumar/Travel-Application"
       }
     ]
   },
   "education": {
     "eyebrow": "Education",
-    "title": "Completed academic foundation.",
+    "title": "My academic journey",
     "items": [
       {
-        "date": "2022 - 2026",
+        "date": "2022 – 2026",
         "school": "Mohan Babu University, Tirupati",
-        "detail": "B.Tech - Computer Science Engineering",
-        "result": "Final CGPA: 8.8",
+        "detail": "B.Tech — Computer Science and Engineering",
+        "result": "CGPA: 8.8 (confirm/update if your final transcript differs)",
+        "status": "Graduate"
+      },
+      {
+        "date": "2020 – 2022",
+        "school": "RK Vidyalaya Junior College, Chittoor",
+        "detail": "Intermediate — MPC",
+        "result": "80.7%",
         "status": "Completed"
       },
       {
-        "date": "2020 - 2022",
-        "school": "RK Vidyalaya Jr College, Chittoor",
-        "detail": "Intermediate (MPC)",
-        "result": "Percentage: 80.7%",
-        "status": "Completed"
-      },
-      {
-        "date": "2019 - 2020",
-        "school": "Zilla Parishad Govt High School, Chittoor",
+        "date": "2019 – 2020",
+        "school": "Zilla Parishad Government High School",
         "detail": "SSC",
-        "result": "Percentage: 98%",
+        "result": "98%",
         "status": "Completed"
       }
     ]
   },
   "certifications": {
-    "eyebrow": "Certifications",
-    "title": "Learning that supports real project work.",
+    "eyebrow": "Continuous learning",
+    "title": "Certifications & training",
     "items": [
       {
-        "title": "Certified System Administrator - ServiceNow",
+        "title": "ServiceNow Certified System Administrator",
         "year": "2025",
         "href": "https://drive.google.com/file/d/1WeCsG10b3paqWezRIk-pCZhyhAXuvbtv/view?usp=sharing"
       },
       {
-        "title": "Certified Application Developer - ServiceNow",
+        "title": "ServiceNow Certified Application Developer",
         "year": "2025",
         "href": "https://drive.google.com/file/d/1PimaYW63saSEfDJZQqSAvX61bd-gdzNr/view?usp=sharing"
       },
       {
-        "title": "Python Essentials - Cisco",
+        "title": "Python Essentials — Cisco",
         "year": "2024"
       },
       {
-        "title": "Introduction to Cybersecurity - Cisco",
+        "title": "Introduction to Cybersecurity — Cisco",
         "year": "2024"
       },
       {
@@ -207,16 +249,12 @@
     ]
   },
   "contact": {
-    "eyebrow": "Contact",
-    "title": "Let's build something thoughtful.",
+    "eyebrow": "Let's connect",
+    "title": "Have a role, project, or idea in mind?",
     "links": [
       {
-        "label": "arigalapunith0081@gmail.com",
+        "label": "Email",
         "href": "mailto:arigalapunith0081@gmail.com"
-      },
-      {
-        "label": "+91 9392465021",
-        "href": "tel:+919392465021"
       },
       {
         "label": "LinkedIn",
@@ -232,5 +270,5 @@
       }
     ]
   },
-  "footerText": "Built with React and driven by editable portfolio data."
+  "footerText": "Designed with curiosity and built with React."
 }

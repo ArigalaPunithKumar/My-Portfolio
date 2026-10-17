@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ExternalLink, Mail, Download, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import portfolioData from "./portfolio-data.json";
 
 // Animation Variants
 const fadeInUp = {
@@ -130,7 +131,7 @@ function AnimatedStat({ stat }) {
 }
 
 function App() {
-  const [portfolio, setPortfolio] = useState(null);
+  const [portfolio, setPortfolio] = useState(portfolioData);
   const [loadError, setLoadError] = useState("");
   const [activeSection, setActiveSection] = useState("home");
   const [projectFilter, setProjectFilter] = useState("All");
@@ -143,25 +144,7 @@ function App() {
   });
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    async function loadPortfolio() {
-      try {
-        const response = await fetch("/portfolio-data.json", { signal: controller.signal });
-        if (!response.ok) throw new Error("Portfolio data could not be loaded.");
-
-        const data = await response.json();
-        setPortfolio(data);
-        document.title = `${data.identity.name} | ${data.identity.shortRole}`;
-      } catch (error) {
-        if (error.name !== "AbortError") {
-          setLoadError(error.message);
-        }
-      }
-    }
-
-    loadPortfolio();
-    return () => controller.abort();
+    document.title = `${portfolioData.identity.name} | ${portfolioData.identity.shortRole}`;
   }, []);
 
   useEffect(() => {

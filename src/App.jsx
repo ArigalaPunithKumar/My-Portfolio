@@ -362,8 +362,8 @@ function App() {
                   ))}
                 </div>
                 <div className="project-links">
-                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}><ExternalLink size={17} /> Source code <ExternalLink size={15} /></a>}
-                  {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>Live demo <ExternalLink size={15} /></a>}
+                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => { event.preventDefault(); event.stopPropagation(); window.open(project.repoUrl, "_blank", "noopener,noreferrer"); }}><ExternalLink size={17} /> Source code <ExternalLink size={15} /></a>}
+                  {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => { event.preventDefault(); event.stopPropagation(); window.open(project.demoUrl, "_blank", "noopener,noreferrer"); }}>Live demo <ExternalLink size={15} /></a>}
                 </div>
               </motion.article>
             ))}

@@ -84,7 +84,25 @@ function SectionHeading({ eyebrow, title }) {
 }
 
 function AnimatedStat({ stat }) {
+  const [liveValue, setLiveValue] = useState(null);
   const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (stat.dynamic !== "leetcode") return undefined;
+    const controller = new AbortController();
+    fetch("https://alfa-leetcode-api.onrender.com/arigalapunith0081/solved", { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("LeetCode stats unavailable");
+        return response.json();
+      })
+      .then((data) => {
+        const candidates = [data.solvedProblem, data.totalSolved, data.solved, data.total_solved];
+        const value = candidates.find((candidate) => Number.isFinite(Number(candidate)) && candidate !== null && candidate !== "");
+        if (value !== undefined) setLiveValue(Number(value));
+      })
+      .catch(() => {});
+    return () => controller.abort();
+  }, [stat.dynamic]);
   const statRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -99,12 +117,14 @@ function AnimatedStat({ stat }) {
 
         const startTime = performance.now();
         const duration = 1500;
-        const decimals = Number.isInteger(stat.value) ? 0 : 1;
+        const numericValue = stat.dynamic === "leetcode" ? liveValue : stat.value;
+        if (numericValue === null || numericValue === undefined) { setDisplayValue("—"); observer.disconnect(); return; }
+        const decimals = Number.isInteger(numericValue) ? 0 : 1;
 
         const animate = (time) => {
           const progress = Math.min((time - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          setDisplayValue((stat.value * eased).toFixed(decimals));
+          setDisplayValue((numericValue * eased).toFixed(decimals));
 
           if (progress < 1) requestAnimationFrame(animate);
         };
@@ -117,7 +137,7 @@ function AnimatedStat({ stat }) {
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [stat.value, hasAnimated]);
+  }, [stat.value, stat.dynamic, liveValue, hasAnimated]);
 
   return (
     <motion.span variants={scaleIn} ref={statRef}>
@@ -342,8 +362,8 @@ function App() {
                   ))}
                 </div>
                 <div className="project-links">
-                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noreferrer"><ExternalLink size={17} /> Source code <ExternalLink size={15} /></a>}
-                  {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo <ExternalLink size={15} /></a>}
+                  {project.repoUrl && <a className="project-link" href={project.repoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}><ExternalLink size={17} /> Source code <ExternalLink size={15} /></a>}
+                  {project.demoUrl && <a className="project-link" href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>Live demo <ExternalLink size={15} /></a>}
                 </div>
               </motion.article>
             ))}

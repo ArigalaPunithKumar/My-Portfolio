@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ExternalLink, Mail, Download, ArrowRight } from "lucide-react";
+import { ExternalLink, Mail, Download, ArrowRight, Github } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 // Animation Variants
@@ -267,7 +267,7 @@ function App() {
             transition={{ duration: 1, ease: "easeOut" }}
             aria-label={hero.visualLabel}
           >
-            <img src={hero.visualUrl} alt={hero.visualAlt} />
+            <img src={identity.profileImage || hero.visualUrl} alt={hero.visualAlt} />
           </motion.figure>
         </section>
 
